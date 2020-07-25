@@ -84,7 +84,7 @@ function accelerateUp(event: any) {  //FUNCIÓ ACCELERAR POtÊNCIA
 
 }
 
-function breakDown(event: any) {
+function breakDown(event: any) {//FUNCIÓ FRENAR POtÊNCIA
     var target = event.target;  //Botó que dispara
     var parent = target.parentElement; //Contenidor del botó
     var a = parent.id; //id del contenidor (Vam crear un contenidor amb id= rocketCode)
@@ -116,7 +116,7 @@ function breakDown(event: any) {
     }
 }
 
-function printRocket(event: any) {
+function printRocket(event: any) {//FUNCIÓ PRINT COET
     var target = event.target;  //Botó que dispara
     var parent = target.parentElement; //Contenidor del botó
     var a = parent.id; //id del contenidor (Vam crear un contenidor amb id= rocketCode)
