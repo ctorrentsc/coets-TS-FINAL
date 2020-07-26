@@ -7,6 +7,7 @@ function newRocket() {  // CREAR NOU COET (+ Displai i botons)
     var thrustersNum: any;
     var i;
     var value:boolean = false;
+    var powerRegex = /[1-9][0-9]*0$/;
 
     if (!codeRegex.test(rocketCode)) {  // Es cumpleix el format del codi?
         alert("Cal que el codi contingui 8 caràcters alfanumèrics");
@@ -25,9 +26,15 @@ function newRocket() {  // CREAR NOU COET (+ Displai i botons)
 
         for (i = 0; i < thrustersNum; i++) { //Potència  per a cada propulsor
             var power: any = prompt("Introdueix la potència màxima del propulsor " + (i + 1) + ". \nCal que sigui múltiple de 10.");
+            if(!powerRegex.test(power)){ //Comprovem que la potència és múltiple de 10
+                alert("La potència ha de ser un múltiple de 10");
+                value = false;
+                i -=1; //Com q no és multiple de 10, fem que ho torni a demanar amb i -=1
+            } else { //Si potència amb regex multiple de 10 ok
             var newThruster = new Thruster(power); // Creem un nou propulsor
             newRocket.addThruster(newThruster);  //Pugem a l'Array de propulsors
             value = true;
+            }
         }
 
         if(value == true){// Si el coet es crea tot ok sense cancel·lar promps

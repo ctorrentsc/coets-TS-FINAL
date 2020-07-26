@@ -38,7 +38,7 @@ var Rocket = /** @class */ (function () {
     Rocket.prototype.getMaxPower = function () {
         var impuls = 0;
         for (var i = 0; i < this._thrusters.length; i++) {
-            impuls += this._thrusters[i].power;
+            impuls += Number(this._thrusters[i].power); //Posem Number pq sumi i no concateni
         }
         return impuls; //Suma de potències
     };
