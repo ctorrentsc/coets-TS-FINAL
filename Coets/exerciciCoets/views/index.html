@@ -8,8 +8,6 @@
   <title> Rockets exercise </title>
   <meta name="author" content="Clara Torrents Canals" />
   <meta name="description" content="Rockets JavaScript" />
-  <!-- Kit per a icones Fontawesom -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <!-- CSS Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
   <!-- Bootstrap CSS -->
@@ -23,6 +21,7 @@
 
   <div class="container-fluid text-center"><!-- main container -->
 
+  <header>
       <div class="container d-flex flex-column justify-content-center p-3 mt-5"><!-- rocket + title -->
           <img src="img/rocket.svg" class="animate__animated animate__flip animate__slower 3s mr-2 img-fluid"
             alt="rocket color icon">
@@ -30,7 +29,9 @@
       </div> <!-- rocket + title -->
 
           <input type="button" onClick="newRocket()" class="btn btn-danger text-monospace" Value="Crear nou coet" /><br><!--botó crear coet-->
+  </header>
 
+  <main>
       <div class="container border-primary rounded my-5" id="dataBox"><!-- contenidor coets existents -->
       <div class="container-fluid d-flex flex-row justify-content-around">
           <h2
@@ -42,6 +43,7 @@
             </div><!--Contenidor info r/botons -->
           </div><!-- contenidor resultats -->
       </div><!-- contenidor coets existents -->
+  </main>
 
   </div> <!-- main container -->
 
