@@ -55,20 +55,21 @@ var Rocket = /** @class */ (function () {
         var resultDisplay = document.getElementById("result"); //Penjant d'quí anirà tota la info
         for (i = 0; i < this._thrusters.length; i++) {
             text += this._thrusters[i].displayThruster(i); //Imprimim potència max de cada propulsor
-            var divResult = document.createElement("div"); // Div que inclourà info coet+accelerar+frenar+print
-            divResult.setAttribute("class", "d-flex flex-row p-4 mt-3 border border-warning rounded");
-            divResult.setAttribute("id", (this._rocketCode + "A"));
-            var divResult2 = document.createElement("div"); //Contenidor info accelerar
-            divResult2.setAttribute("class", "ml-md-5 mt-5 text-success");
-            divResult2.setAttribute("id", (this._rocketCode + "B"));
-            var divResult3 = document.createElement("div"); //Contenidor info frenar
-            divResult3.setAttribute("class", "ml-md-5 mt-5 text-danger");
-            divResult3.setAttribute("id", (this._rocketCode + "C"));
-            var divResult4 = document.createElement("div"); //Contenidor info print
-            divResult4.setAttribute("class", "ml-md-5 mt-5 text-monospace text-primary");
-            divResult4.setAttribute("id", (this._rocketCode + "D"));
-            divResult.innerHTML = "CODI: " + this._rocketCode + "<br>" + text + "<br>" + "POTÈNCIA DEL COET: " + this.getMaxPower();
         }
+        var divResult = document.createElement("div"); // Div que inclourà info coet+accelerar+frenar+print
+        divResult.setAttribute("class", "d-flex flex-row p-4 mt-3 border border-warning rounded");
+        divResult.setAttribute("id", (this._rocketCode + "A"));
+        divResult.innerHTML = "CODI: " + this._rocketCode + "<br>" + text + "<br>" + "POTÈNCIA DEL COET: " + this.getMaxPower();
+        //Creem contenidors q pengen de divResult
+        var divResult2 = document.createElement("div"); //Contenidor info accelerar
+        divResult2.setAttribute("class", "ml-md-5 mt-5 text-success");
+        divResult2.setAttribute("id", (this._rocketCode + "B"));
+        var divResult3 = document.createElement("div"); //Contenidor info frenar
+        divResult3.setAttribute("class", "ml-md-5 mt-5 text-danger");
+        divResult3.setAttribute("id", (this._rocketCode + "C"));
+        var divResult4 = document.createElement("div"); //Contenidor info print
+        divResult4.setAttribute("class", "ml-md-5 mt-5 text-monospace text-primary");
+        divResult4.setAttribute("id", (this._rocketCode + "D"));
         resultDisplay.append(divResult); // Col·loquem cada div q tb depèn class bootstrap contenidor
         divResult.appendChild(divResult2);
         divResult.appendChild(divResult3);
@@ -134,8 +135,6 @@ var Rocket = /** @class */ (function () {
         var divResultUp = document.getElementById(this._rocketCode + "B"); //info accelerar  
         var divResultDown = document.getElementById(this._rocketCode + "C"); //info frenar
         var divResultPrint = document.getElementById(this._rocketCode + "D"); // info print
-        this.getMaxPower();
-        console.log(this.getMaxPower());
         divResultUp.innerHTML = ""; // posem en blanc display accelerar
         divResultDown.innerHTML = ""; // posem en blanc display frenar
         divResultPrint.innerHTML = "CODI: " + this._rocketCode + "<br>" + "Potència màxima: " + this.getMaxPower() +
